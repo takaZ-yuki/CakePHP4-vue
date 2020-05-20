@@ -2,15 +2,18 @@
 
 ## 実行方法
 
-docker-compose初回起動
+docker-compose初回起動時はjavascriptのパッケージを取得できていない為
+watchコンテナーは起動に失敗する。
 
 ```
   docker-compose up -d
-  docker exec -it blog-app composer install
-  docker exec -it blog-app npm install -y
+  docker exec -it app composer install
+  docker exec -it app npm install -y
 ```
+watchコンテナーを再起動する
 
 ```
+docker-compose up watch
 ```
 
 ## 確認方法
